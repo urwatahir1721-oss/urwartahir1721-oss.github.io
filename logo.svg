@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+    <defs>
+        <linearGradient id="helixGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#00ced1;" />
+            <stop offset="100%" style="stop-color:#8a2be2;" />
+        </linearGradient>
+        <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+            <feMerge>
+                <feMergeNode in="coloredBlur"/>
+                <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+        </filter>
+    </defs>
+    <style>
+        .helix-path {
+            fill: none;
+            stroke-width: 5;
+            stroke: url(#helixGradient);
+        }
+        .circuit-line {
+            stroke: #00bcd4;
+            stroke-width: 1.5;
+        }
+        .circuit-node {
+            fill: #00bcd4;
+        }
+        .initials {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 30px;
+            fill: #ffffff;
+            text-anchor: middle;
+        }
+    </style>
+    <g filter="url(#glow)">
+        
+        <path class="helix-path" d="M 20,10 C 40,30 40,70 20,90"/>
+        <path class="helix-path" d="M 80,10 C 60,30 60,70 80,90"/>
+
+        
+        <line class="circuit-line" x1="20" y1="20" x2="80" y2="20" />
+        <line class="circuit-line" x1="20" y1="50" x2="80" y2="50" />
+        <line class="circuit-line" x1="20" y1="80" x2="80" y2="80" />
+
+        <circle class="circuit-node" cx="20" cy="20" r="3"/>
+        <circle class="circuit-node" cx="80" cy="20" r="3"/>
+        <circle class="circuit-node" cx="20" cy="50" r="3"/>
+        <circle class="circuit-node" cx="80" cy="50" r="3"/>
+        <circle class="circuit-node" cx="20" cy="80" r="3"/>
+        <circle class="circuit-node" cx="80" cy="80" r="3"/>
+
+        
+        <text x="38" y="60" class="initials">U</text>
+        <text x="62" y="45" class="initials">T</text>
+    </g>
+</svg>
